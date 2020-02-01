@@ -11224,14 +11224,14 @@ a,button,.btn {
 .alert-dismissible .close {
 	top: 0;
 	right: 5px;
-	padding: 5px
+	padding: 5px;
 }
 
 .icon-gradient {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	text-fill-color: transparent
+	-webkit-text-fill-color: transparent;
 }
 
 .font-size-xlg {
@@ -11505,7 +11505,7 @@ Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */body {
-	-webkit-backface-visibility: hidden
+	-webkit-backface-visibility: hidden;
 }
 
 .animated {
