@@ -9990,7 +9990,7 @@ a,button,.btn {
 	display: none;
 	padding: 0 1.5rem;
 	height: 60px;
-	align-items: center
+	align-items: center;
 }
 
 .fixed-header .app-header {
