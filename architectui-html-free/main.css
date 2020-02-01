@@ -1,13 +1,4 @@
-/*!
- =========================================================
- * ArchitectUI HTML Theme Dashboard - v1.0.0
- =========================================================
- * Product Page: https://dashboardpack.com
- * Copyright 2019 DashboardPack (https://dashboardpack.com)
- * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
- =========================================================
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- */.border-primary {
+.border-primary {
 	border-color: #3f6ad8
 }
 
@@ -1278,7 +1269,7 @@ pre code {
 
 	.col-md-12 {
 		flex: 0 0 100%;
-		max-width: 100%
+        max-width: 100%
 	}
 
 	.order-md-first {
@@ -9981,9 +9972,9 @@ a,button,.btn {
 }
 
 .app-header__logo .logo-src {
-	height: 23px;
-	width: 97px;
-	background: url(assets/images/logo-inverse.png)
+	height: 40px;
+    width: 120px;
+	background: url(owasp2edited.png)
 }
 
 .app-header__menu,.app-header__mobile-menu {
@@ -10091,7 +10082,7 @@ a,button,.btn {
 }
 
 .app-header.header-text-light .app-header__logo .logo-src {
-	background: url(assets/images/logo.png)
+	background: url(owasp2edited.png)
 }
 
 .app-header.header-text-light .app-header__mobile-menu .hamburger-inner,.app-header.header-text-light .app-header__mobile-menu .hamburger-inner::before,.app-header.header-text-light .app-header__mobile-menu .hamburger-inner::after {
@@ -10174,7 +10165,7 @@ a,button,.btn {
 }
 
 .app-header.header-text-dark .app-header__logo .logo-src {
-	background: url(assets/images/logo-inverse.png)
+    background: url(owasp2edited.png)
 }
 
 .app-sidebar {
@@ -10452,7 +10443,8 @@ a,button,.btn {
 }
 
 .app-sidebar.sidebar-text-light .app-header__logo .logo-src {
-	background: url(assets/images/logo.png)
+    background: url(owasp2edited.png)
+    
 }
 
 .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner,.app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner::before,.app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner::after {
