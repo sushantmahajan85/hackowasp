@@ -3,17 +3,27 @@ const fs = require('fs');
 
 const userData = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/userData.json`));
 
-exports.getAllUserUpdates = (req, res) => {
-    console.log(req.requestTime);
+const Update = require('./../app');
 
-    res.status(200).json({
-        status: 'success',
-        requestedAt: req.requestTime,
-        data: {
-            form: userData
-        }
-    })
-}
+exports.getAllUserUpdates = async (req, res) => {
+    // console.log(req.requestTime);
+    try {
+        // const updates = await Update.find();
+
+        res.status(200).json({
+            status: 'success',
+            requestedAt: req.requestTime,
+            data: {
+                form: userData
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        })
+    }
+};
 
 exports.createUserUpdate = (req, res) => {
     console.log(req.requestTime);
