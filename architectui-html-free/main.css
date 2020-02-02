@@ -9974,7 +9974,7 @@ a,button,.btn {
 .app-header__logo .logo-src {
 	height: 40px;
     width: 120px;
-	background: url(owasp2edited.png)
+	background: url(owasp2.png)
 }
 
 .app-header__menu,.app-header__mobile-menu {
@@ -10082,7 +10082,7 @@ a,button,.btn {
 }
 
 .app-header.header-text-light .app-header__logo .logo-src {
-	background: url(owasp2edited.png)
+	background: url(owasp2.png)
 }
 
 .app-header.header-text-light .app-header__mobile-menu .hamburger-inner,.app-header.header-text-light .app-header__mobile-menu .hamburger-inner::before,.app-header.header-text-light .app-header__mobile-menu .hamburger-inner::after {
@@ -10165,7 +10165,7 @@ a,button,.btn {
 }
 
 .app-header.header-text-dark .app-header__logo .logo-src {
-    background: url(owasp2edited.png)
+    background: url(owasp2.png)
 }
 
 .app-sidebar {
@@ -10443,7 +10443,7 @@ a,button,.btn {
 }
 
 .app-sidebar.sidebar-text-light .app-header__logo .logo-src {
-    background: url(owasp2edited.png)
+    background: url(owasp2.png)
     
 }
 
