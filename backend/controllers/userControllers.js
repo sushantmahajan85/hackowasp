@@ -1,20 +1,22 @@
 const express = require('express');
 const fs = require('fs');
+const user = require('../schema/models/User');
 
 const userData = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/userData.json`));
 
 const Update = require('./../app');
 
-exports.getAllUserUpdates = async (req, res) => {
+exports.getAllUsers = async (req, res) => {
     // console.log(req.requestTime);
     try {
+        const users = await user.find();
         // const updates = await Update.find();
 
         res.status(200).json({
             status: 'success',
             requestedAt: req.requestTime,
             data: {
-                form: userData
+                users
             }
         });
     } catch (err) {
@@ -24,15 +26,3 @@ exports.getAllUserUpdates = async (req, res) => {
         })
     }
 };
-
-exports.createUserUpdate = (req, res) => {
-    console.log(req.requestTime);
-
-    res.status(201).json({
-        status: 'done',
-        createdAt: req.requestTime,
-        data: {
-            userData
-        }
-    })
-}

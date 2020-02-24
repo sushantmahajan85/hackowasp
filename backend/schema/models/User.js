@@ -1,92 +1,37 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema({
-    name: {
+const mongoose = require('mongoose');
+const validator = require('validator');
+const userSchema = new mongoose.Schema({
+    password: {
         type: String,
-        required: true
-    },
-    age: {
-        type: Number,
-        required: true
-    },
-    healthIndex: {
-        type: Number,
-    },
-    bmi: {
-        type: Number,
-    },
-    bp: {
-        type: Number,
-    },
-    hp: {
-        type: Number,
-    },
-    height: {
-        type: Number
-    },
-    weight: {
-        type: String
-    },
-    gender: {
-        type: String
+        required: true,
+        minlength: 8
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        lowercase: true,
+        unique: true,
+        validate: [validator.isEmail, 'Please provide a valid email.']
     },
-    password: {
-        type: String,
-        required: true
-    },
-    dateCreated: {
-        type: String,
-        required: true
-    },
-    metrics: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Metric"
-        }
-    ],
-    challenges: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Challenge"
-        }
-    ],
-    friends: [
-        {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-        }
-    ],
-    displayPicture: {
+    phoneNo: {
         type: Number,
-        required: true
+        required: true,
+        minlength: [10, 'Contact number is not correct'],
+        maxlength: [10, 'Contact number is not correct'],
     },
-    rewards: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Reward"
-        }
-    ],
-    insurances: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Insurance"
-        }
-    ],
-    offers: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Offer"
-        }
-    ],
-    status: {
+    name: {
         type: String,
         required: true
     }
+
 });
 
-module.exports = mongoose.model("User", userSchema)
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+
+    this.password = await bcrypt.hash(this.password, 12);
+
+});
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;
